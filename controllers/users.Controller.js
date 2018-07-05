@@ -71,7 +71,7 @@ userController.updateUser = (req, res) => {
                 res
                     .status(200)
                     .json(user)
-                    console.log(user)
+                    console.log('Updated User - ' , user)
             }
         })
 }
