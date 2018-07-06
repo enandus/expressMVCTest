@@ -1,9 +1,14 @@
-let mongoose = require('mongoose')
+import { Schema, model } from 'mongoose';
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
     name: {
-        type: String,
-        required: true
+        firstname: {
+            type: String,
+            required: true
+        },
+        lastname: {
+            type: String
+        }
     },
     age: {
         type: Number
@@ -14,9 +19,19 @@ const userSchema = new mongoose.Schema({
     gender: {
         type: String,
         required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    phone: {
+        type: Number,
+        required: true,
+
     }
+
 })
 
-let userModel = mongoose.model('Users', userSchema)
+let userModel = model('Users', userSchema)
 
-module.exports = userModel
+export default userModel
